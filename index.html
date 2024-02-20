@@ -1,2 +1,42 @@
 hello
   redText.setFill(Color.RED);
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+public class RedTextExample extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        // Create a Text node with the desired text
+        Text redText = new Text("Hello, Red Text!");
+
+        // Set the font size and color
+        redText.setFont(Font.font(20)); // Set the font size
+        redText.setFill(Color.RED); // Set the text color to red
+
+        // Create a StackPane as the root node
+        StackPane root = new StackPane();
+        root.getChildren().add(redText);
+
+        // Create a Scene with the StackPane as the root
+        Scene scene = new Scene(root, 300, 200);
+
+        // Set the scene for the stage
+        primaryStage.setScene(scene);
+
+        // Set the title of the stage
+        primaryStage.setTitle("Red Text Example");
+
+        // Show the stage
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
